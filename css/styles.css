@@ -1,0 +1,479 @@
+:root {
+  --green: #263f1f;
+  --green-dark: #172712;
+  --gold: #c99a35;
+  --gold-light: #e7c46a;
+  --wine: #7a1f1f;
+  --cream: #f7f2e8;
+  --paper: #fffaf0;
+  --text: #2a2a2a;
+  --muted: #666666;
+  --white: #ffffff;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  --max-width: 1180px;
+  --radius: 22px;
+}
+
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at 20px 20px, rgba(201, 154, 53, 0.10) 0 12px, transparent 13px),
+    linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+    var(--cream);
+  background-size: 90px 90px, auto, auto;
+}
+
+/* BARRA SUPERIOR */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background:
+    linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
+    var(--cream);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.ornamental-bar {
+  height: 14px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--gold) 0 18px,
+      var(--gold-light) 18px 24px,
+      var(--gold) 24px 42px,
+      transparent 42px 52px
+    );
+  border-bottom: 2px solid var(--gold);
+}
+
+/* MENÚ */
+.main-nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.2rem 1.1rem;
+  display: grid;
+  grid-template-columns: 160px 1fr auto 1fr;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.9rem;
+  color: var(--green);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+}
+
+.nav-menu a {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: var(--green-dark);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.9rem;
+}
+
+.nav-menu a:hover {
+  color: var(--gold);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--green);
+  min-width: 260px;
+  justify-content: center;
+}
+
+.brand-emblem {
+  width: 72px;
+  height: 72px;
+  border: 4px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-size: 2rem;
+  background: var(--white);
+}
+
+.brand span {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.brand strong {
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* HERO */
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 1.2rem;
+  background:
+    linear-gradient(90deg, rgba(23, 39, 18, 0.90), rgba(122, 31, 31, 0.70)),
+    url("../assets/img/feria-patronal.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-copy {
+  color: var(--white);
+}
+
+.section-label {
+  color: var(--gold-light);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.7rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  line-height: 0.95;
+  margin-bottom: 1rem;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  color: var(--gold-light);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.hero-text {
+  max-width: 720px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.35rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--green-dark);
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--wine);
+}
+
+.btn-light:hover {
+  background: var(--gold-light);
+  color: var(--green-dark);
+}
+
+.hero-card {
+  background: rgba(255, 250, 240, 0.94);
+  border: 5px solid rgba(201, 154, 53, 0.85);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-card h2 {
+  color: var(--wine);
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.hero-card p {
+  color: var(--text);
+}
+
+/* SECCIONES */
+.section {
+  padding: 5rem 1.2rem;
+}
+
+.section-title {
+  max-width: var(--max-width);
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.section-title h2 {
+  color: var(--green);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  max-width: 850px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+/* TARJETAS */
+.cards-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.info-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid rgba(201, 154, 53, 0.35);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 7px;
+  background: linear-gradient(90deg, var(--gold), var(--wine), var(--green));
+}
+
+.card-icon {
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+.info-card h3 {
+  color: var(--wine);
+  font-size: 1.35rem;
+  margin-bottom: 0.7rem;
+}
+
+.info-card p {
+  color: var(--muted);
+}
+
+/* FERIA */
+.feria-section {
+  background:
+    linear-gradient(rgba(87, 20, 20, 0.92), rgba(87, 20, 20, 0.92)),
+    url("../assets/img/feria-patronal.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+}
+
+.feria-title h2,
+.feria-title p {
+  color: var(--white);
+}
+
+.program-highlight {
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+}
+
+.program-highlight h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.program-highlight p {
+  max-width: 780px;
+}
+
+.feria-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.feria-card {
+  background: rgba(255, 250, 240, 0.96);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  border: 1px solid rgba(201, 154, 53, 0.45);
+  box-shadow: var(--shadow);
+}
+
+.feria-card h3 {
+  color: var(--wine);
+  margin-bottom: 0.6rem;
+}
+
+.feria-card p {
+  color: var(--muted);
+}
+
+/* CONTACTO */
+.contact-section {
+  background: var(--paper);
+  text-align: center;
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--green-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .main-nav {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-links,
+  .nav-menu {
+    justify-content: center;
+  }
+
+  .brand {
+    margin: 0 auto;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid,
+  .feria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-highlight {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 580px) {
+  .social-links {
+    display: none;
+  }
+
+  .nav-menu {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu a {
+    font-size: 0.78rem;
+  }
+
+  .brand {
+    min-width: auto;
+  }
+
+  .brand-emblem {
+    width: 58px;
+    height: 58px;
+    font-size: 1.5rem;
+  }
+
+  .brand strong {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 4rem 1.2rem;
+  }
+
+  .hero-card {
+    padding: 1.4rem;
+  }
+}
