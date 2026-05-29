@@ -1,9 +1,10 @@
 :root {
-  --green: #263f1f;
-  --green-dark: #172712;
+  --brown: #3a1717;
+  --brown-dark: #241010;
+  --turquoise: #35bfe3;
+  --petrol: #075567;
   --gold: #c99a35;
   --gold-light: #e7c46a;
-  --wine: #7a1f1f;
   --cream: #f7f2e8;
   --paper: #fffaf0;
   --text: #2a2a2a;
@@ -74,7 +75,7 @@ body {
 .social-links {
   display: flex;
   gap: 0.9rem;
-  color: var(--green);
+  color: var(--brown);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -90,11 +91,12 @@ body {
 .nav-menu a {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
-  color: var(--green-dark);
+  color: var(--brown-dark);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .nav-menu a:hover {
@@ -106,39 +108,42 @@ body {
   align-items: center;
   gap: 0.8rem;
   text-decoration: none;
-  color: var(--green);
+  color: var(--brown);
   min-width: 260px;
   justify-content: center;
 }
 
-.brand-emblem {
-  width: 72px;
-  height: 72px;
-  border: 4px solid var(--gold);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--gold);
-  font-size: 2rem;
+.brand-logo {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
   background: var(--white);
+  border-radius: 50%;
+  padding: 0.25rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.brand-text {
+  text-align: left;
 }
 
 .brand span {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--gold);
-  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--turquoise);
+  font-weight: 800;
 }
 
 .brand strong {
   display: block;
-  font-size: 2rem;
-  line-height: 1;
+  font-size: 1.55rem;
+  line-height: 1.05;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  color: var(--brown);
 }
 
 /* HERO */
@@ -148,7 +153,7 @@ body {
   align-items: center;
   padding: 4rem 1.2rem;
   background:
-    linear-gradient(90deg, rgba(23, 39, 18, 0.90), rgba(122, 31, 31, 0.70)),
+    linear-gradient(90deg, rgba(36, 16, 16, 0.92), rgba(7, 85, 103, 0.72)),
     url("../assets/img/feria-patronal.jpg");
   background-size: cover;
   background-position: center;
@@ -216,7 +221,7 @@ body {
 
 .btn-primary {
   background: var(--gold);
-  color: var(--green-dark);
+  color: var(--brown-dark);
 }
 
 .btn-primary:hover {
@@ -231,17 +236,17 @@ body {
 
 .btn-outline:hover {
   background: var(--white);
-  color: var(--green-dark);
+  color: var(--brown-dark);
 }
 
 .btn-light {
   background: var(--white);
-  color: var(--wine);
+  color: var(--brown);
 }
 
 .btn-light:hover {
   background: var(--gold-light);
-  color: var(--green-dark);
+  color: var(--brown-dark);
 }
 
 .hero-card {
@@ -253,7 +258,7 @@ body {
 }
 
 .hero-card h2 {
-  color: var(--wine);
+  color: var(--brown);
   font-size: 2.4rem;
   line-height: 1;
   margin-bottom: 1rem;
@@ -275,7 +280,7 @@ body {
 }
 
 .section-title h2 {
-  color: var(--green);
+  color: var(--brown);
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1;
   margin-bottom: 1rem;
@@ -312,7 +317,7 @@ body {
   position: absolute;
   inset: 0 0 auto 0;
   height: 7px;
-  background: linear-gradient(90deg, var(--gold), var(--wine), var(--green));
+  background: linear-gradient(90deg, var(--gold), var(--brown), var(--brown));
 }
 
 .card-icon {
@@ -322,7 +327,7 @@ body {
 }
 
 .info-card h3 {
-  color: var(--wine);
+  color: var(--brown);
   font-size: 1.35rem;
   margin-bottom: 0.7rem;
 }
@@ -386,7 +391,7 @@ body {
 }
 
 .feria-card h3 {
-  color: var(--wine);
+  color: var(--brown);
   margin-bottom: 0.6rem;
 }
 
@@ -402,7 +407,7 @@ body {
 
 /* FOOTER */
 .site-footer {
-  background: var(--green-dark);
+  background: var(--brown-dark);
   color: var(--white);
   text-align: center;
   padding: 1.4rem;
@@ -465,7 +470,7 @@ body {
   }
 
   .brand strong {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .hero {
@@ -476,4 +481,35 @@ body {
   .hero-card {
     padding: 1.4rem;
   }
+}
+
+.info-card::before {
+  background: linear-gradient(
+    90deg,
+    var(--turquoise),
+    var(--petrol),
+    var(--brown)
+  );
+}
+
+.nav-menu a:hover {
+  color: var(--turquoise);
+}
+
+.btn-primary {
+  background: var(--turquoise);
+  color: var(--brown-dark);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  color: var(--brown-dark);
+}
+
+.hero-card {
+  border-color: rgba(53, 191, 227, 0.85);
+}
+
+.hero-card h2 {
+  color: var(--brown);
 }
