@@ -13,6 +13,34 @@
   --shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
   --max-width: 1180px;
   --radius: 22px;
+
+  :root {
+  --brown: #3a1717;
+  --brown-dark: #241010;
+  --turquoise: #35bfe3;
+  --petrol: #075567;
+  --gold: #c99a35;
+  --gold-light: #e7c46a;
+  --cream: #f7f2e8;
+  --paper: #fffaf0;
+  --text: #2a2a2a;
+  --muted: #666666;
+  --white: #ffffff;
+
+  /* Paleta Feria Patronal 2026 */
+  --fair-purple: #4b123f;
+  --fair-purple-dark: #2b0b27;
+  --fair-magenta: #b8328a;
+  --fair-red: #e6363c;
+  --fair-teal: #00a99d;
+  --fair-gold: #d8a331;
+  --fair-yellow: #f2c94c;
+
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  --max-width: 1180px;
+  --radius: 22px;
+}
+
 }
 
 /* RESET GENERAL */
@@ -154,9 +182,9 @@ body {
   padding: 4rem 1.2rem;
   background:
     linear-gradient(90deg, rgba(36, 16, 16, 0.92), rgba(7, 85, 103, 0.72)),
-    url("../assets/img/feria-patronal.jpg");
+    url("../assets/img/portada-inicio.jpeg");
   background-size: cover;
-  background-position: center;
+  background-position: center 20%;
 }
 
 .hero-inner {
@@ -338,17 +366,58 @@ body {
 
 /* FERIA */
 .feria-section {
+  position: relative;
+  overflow: hidden;
   background:
-    linear-gradient(rgba(87, 20, 20, 0.92), rgba(87, 20, 20, 0.92)),
-    url("../assets/img/feria-patronal.jpg");
-  background-size: cover;
-  background-position: center;
-  color: var(--white);
+    radial-gradient(circle at 12% 12%, rgba(0, 169, 157, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(230, 54, 60, 0.16), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(216, 163, 49, 0.18), transparent 38%),
+    linear-gradient(135deg, #fff8ea 0%, #f7eef6 42%, #eefafa 100%);
+  color: var(--text);
 }
 
-.feria-title h2,
+.feria-section::before {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  right: -4rem;
+  width: 420px;
+  height: 420px;
+  background: url("../assets/img/logo-comitiva.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.feria-section::after {
+  content: "";
+  position: absolute;
+  left: -6rem;
+  bottom: 4rem;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 169, 157, 0.18), transparent 65%);
+  pointer-events: none;
+}
+
+.feria-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.feria-section .section-label {
+  color: var(--fair-magenta);
+}
+
+.feria-title h2 {
+  color: var(--fair-purple-dark);
+}
+
 .feria-title p {
-  color: var(--white);
+  color: #4f3f4b;
 }
 
 .feria-grid {
@@ -497,14 +566,18 @@ body {
 .cartelera-header h3 {
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1;
-  color: var(--white);
+  color: var(--fair-purple-dark);
   margin-bottom: 0.8rem;
 }
 
 .cartelera-header p {
   max-width: 760px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.86);
+  color: #4f3f4b;
+}
+
+.cartelera-header .section-label {
+  color: var(--fair-teal);
 }
 
 .events-grid {
@@ -516,13 +589,13 @@ body {
 }
 
 .event-card {
-  background: var(--paper);
+  background: rgba(255, 250, 240, 0.96);
   color: var(--text);
   text-decoration: none;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 18px 42px rgba(75, 18, 63, 0.16);
+  border: 1px solid rgba(216, 163, 49, 0.45);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
   min-height: 430px;
   display: flex;
@@ -531,7 +604,7 @@ body {
 
 .event-card:hover {
   transform: translateY(-7px);
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 26px 58px rgba(75, 18, 63, 0.28);
 }
 
 .event-image {
@@ -565,48 +638,66 @@ body {
 .event-content::before {
   content: "";
   position: absolute;
-  top: -27px;
+  top: -31px;
   left: 50%;
   transform: translateX(-50%);
-  width: 58px;
-  height: 58px;
-  background:
-    linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
-    url("../assets/img/logo-alpanocan.png");
-  background-size: contain;
+  width: 66px;
+  height: 66px;
+
+  background-image: url("../assets/img/logo-comitiva.jpeg");
+  background-size: 112%;
   background-repeat: no-repeat;
   background-position: center;
+
+  opacity: 0.82;
+
   border-radius: 50%;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 18px rgba(75, 18, 63, 0.20);
+  border: 2px solid rgba(216, 163, 49, 0.75);
+  background-color: #ffffff;
 }
+
+/* CORRECCIÓN DEFINITIVA DEL BLOQUE DE FECHA EN TARJETAS */
 
 .event-date {
   width: 58px;
+  min-width: 58px;
+  height: auto;
+  align-self: start;
+  justify-self: start;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 800;
+  font-weight: 500;
+  box-shadow: 0 8px 18px rgba(75, 18, 63, 0.18);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .event-date strong {
   display: block;
-  background: var(--white);
-  color: var(--brown-dark);
-  padding: 0.45rem 0;
-  font-size: 1.05rem;
+  width: 100%;
+  background: var(--fair-purple-dark);
+  color: var(--fair-purple-dark);
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  line-height: 2;
 }
 
 .event-date span {
   display: block;
-  background: #9c9c9c;
-  color: var(--white);
-  padding: 0.35rem 0;
+  width: 100%;
+  background: var(--fair-gold);
+  color: var(--fair-purple-dark);
+  padding: 0.42rem 0;
   font-size: 0.9rem;
+  line-height: 1;
   letter-spacing: 0.08em;
 }
 
+
 .event-info h4 {
-  color: var(--brown-dark);
-  font-size: 1.22rem;
+  color: var(--fair-purple-dark);
+  font-size: 1.1rem;
   line-height: 1.18;
   margin-bottom: 0.6rem;
 }
@@ -620,7 +711,7 @@ body {
 
 .read-more {
   display: inline-block;
-  color: var(--brown);
+  color: var(--fair-magenta);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.88rem;
   font-weight: 800;
@@ -674,7 +765,7 @@ body {
 .event-castillo-final {
   background-image:
     linear-gradient(rgba(7, 85, 103, 0.18), rgba(58, 23, 23, 0.18)),
-    url("../assets/img/evento-castillo-final.jpg");
+    url("../assets/img/evento-castillo-final.jpeg");
 }
 
 .event-rifa {
@@ -797,4 +888,145 @@ body {
   max-width: 760px;
   font-size: 1.2rem;
   margin-bottom: 2rem;
+}
+
+/* CONTACTO MEJORADO */
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(0, 169, 157, 0.12), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(216, 163, 49, 0.16), transparent 28%),
+    linear-gradient(135deg, #fff8ea 0%, #f7eef6 48%, #eefafa 100%);
+  text-align: center;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  right: -4rem;
+  width: 360px;
+  height: 360px;
+  background: url("../assets/img/logo-comitiva.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+.contact-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-title h2 {
+  color: var(--fair-purple-dark);
+}
+
+.contact-title p {
+  color: #4f3f4b;
+}
+
+.contact-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 1.4rem;
+  text-align: left;
+}
+
+.contact-card {
+  background: rgba(255, 250, 240, 0.96);
+  border: 1px solid rgba(216, 163, 49, 0.45);
+  border-radius: 22px;
+  padding: 2rem;
+  box-shadow: 0 18px 42px rgba(75, 18, 63, 0.13);
+}
+
+.contact-main {
+  border-top: 7px solid var(--fair-purple);
+}
+
+.contact-card:nth-child(2) {
+  border-top: 7px solid var(--fair-gold);
+}
+
+.location-card {
+  border-top: 7px solid var(--fair-teal);
+}
+
+.contact-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--fair-purple-dark);
+  font-size: 1.6rem;
+  box-shadow: 0 10px 22px rgba(75, 18, 63, 0.14);
+  margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+  color: var(--fair-purple-dark);
+  font-size: 1.45rem;
+  line-height: 1.15;
+  margin-bottom: 0.7rem;
+}
+
+.contact-card p {
+  color: #5e5360;
+  margin-bottom: 1.2rem;
+}
+
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.contact-list li {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(75, 18, 63, 0.08);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+.contact-list span {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.contact-list a {
+  color: var(--fair-purple-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.contact-list a:hover {
+  color: var(--fair-magenta);
+}
+
+.location-card .btn {
+  margin-top: 0.4rem;
+}
+
+/* Responsive contacto */
+@media (max-width: 980px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
