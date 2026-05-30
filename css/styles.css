@@ -1030,3 +1030,129 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* AJUSTES RESPONSIVE PARA MÓVIL */
+
+@media (max-width: 768px) {
+  .top-header {
+    position: relative;
+  }
+
+  .main-nav {
+    padding: 0.8rem 1rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .social-links {
+    display: none;
+  }
+
+  .brand {
+    order: 1;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .brand-logo {
+    width: 68px;
+    height: 68px;
+  }
+
+  .brand-text {
+    text-align: left;
+  }
+
+  .brand span {
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+  }
+
+  .brand strong {
+    font-size: 1.25rem;
+    line-height: 1.05;
+  }
+
+  .nav-menu {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu a {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 72vh;
+    padding: 3.2rem 1.2rem;
+    align-items: center;
+    background-position: center center;
+  }
+
+  .hero-inner {
+    display: block;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    display: block;
+    font-size: clamp(2.7rem, 16vw, 4rem);
+    line-height: 0.95;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.45rem;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(36, 16, 16, 0.84), rgba(7, 85, 103, 0.72)),
+      url("../assets/img/alpanocan-hero.jpg");
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 1.1rem;
+  }
+
+  .feria-section {
+    padding-top: 4rem;
+  }
+
+  .section-title h2 {
+    font-size: 2.35rem;
+  }
+
+  .cartelera-header h3 {
+    font-size: 2.1rem;
+  }
+}
